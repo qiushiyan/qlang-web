@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+</head>
+
+<body>
+  <div id="app" class="min-h-screen flex flex-row items-stretch">
+    <section id="left" class="flex flex-col">
+      <article id="description" class="prose prose-zinc  p-4 lg:p-8 max-w-none min-h-screen h-full">
+        <h2>Playground for the Q Language</h2>
+        <p>
+          My programming endeavors frequently involve a mixed usage of JavaScript, Python, and R, each offering distinct
+          advantages.
+          Inspired by the book <a href="https://interpreterbook.com/">Writing An Interpreter In Go</a>, I was motivated
+          to develop a language that encapsulates the strengths of these three. Thus, the inception of <span
+            class="font-medium">Q</span>.
+        </p>
+        <p>
+          Q's syntax is a blend of R and JavaScript. Its key features include:
+        <ul>
+          <li>Simplified variable assignment: <code>let x = 1</code>, <code>x = 1</code>, and <code>x &lt;- 1</code> are
+            all valid.</li>
+          <li>Unquoted dictionary keys, so <code>{"key": value}</code> becomes <code>{key: value}</code>.</li>
+          <li>Use of curly braces <code>{}</code> for grouping expressions, instead of indentation.</li>
+          <li>Defining functions as variable assignments, e.g., <code>add = fn (a, b) { a + b }</code>.</li>
+          <li>Incorporation of the pipe operator <code>></code> for argument passing in functions.</li>
+        </ul>
+        </p>
+        <p>
+          A noteworthy aspect of Q is its <code>vector</code> data structure, inspired by R's vector type. Arithmetic
+          operations on <code>vector</code> are broadcast across all elements, akin to Python's
+          <code>numpy.Series</code>, but without the need for loops.
+        </p>
+        <p>Q also embraces basic functional programming concepts, allowing functions to be passed as arguments and
+          returned.</p>
+        <p>
+          The playground is powered by a WebAssembly (WASM) export of the <a
+            href="https://github.com/qiushiyan/qlang">Go code</a>. You can try out the example code in the right editor
+          panel and click on the run button on the bottom to see
+          the output There is also a terminal panel that acts like a REPL.
+        </p>
+        <p>
+          While currently a prototype, I welcome any suggestions or contributions via the issue tracker on <a
+            href="https://github.com/qiushiyan/qlang/issues">GitHub</a>.
+        </p>
+
+      </article>
+
+    </section>
+    </section>
+
+    <section id="right" class="flex flex-col">
+      <header class="flex flex-row bg-slate-200">
+        <button id="editor-button" class="active">
+          Editor
+        </button>
+        <button id="terminal-button">
+          Terminal
+        </button>
+
+      </header>
+      <section id="terminal" class="hidden basis-full bg-black font-mono text-white p-4 lg:p-8">
+
+      </section>
+
+      <section id="editor" class="flex flex-col basis-full">
+        <textarea id="editor-editor" class="p-2 lg:p-4" spellcheck="false"></textarea>
+        <section id="editor-control">
+          <header class="flex items-center justify-between border-2 bg-slate-200 py-3 px-6">
+            <p class="font-medium">Output</p>
+            <div>
+              <select id="editor-example-select" class="mr-2 h-10 w-36">
+                <option value="data-types">Data Types</option>
+                <option value="expressions">Expressions</option>
+                <option value="functions">Functions</option>
+                <option value="functional">Functional</option>
+
+              </select>
+
+              <button id="editor-run" class="border border-black">
+                Run ▶
+              </button>
+            </div>
+          </header>
+          <div id="editor-output"></div>
+        </section>
+      </section>
+  </div>
+  </section>
+
+  </div>
+  <script src="/wasm_exec_tiny.js"></script>
+  <script type="module" src="/src/main.ts">
+  </script>
+</body>
+
+</html>
