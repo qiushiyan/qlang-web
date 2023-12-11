@@ -58,7 +58,7 @@ runButton.addEventListener("click", () => {
 	console.log = (message: string) => {
 		messages.push(message);
 	};
-	const result = runScript(editor.value.trim());
+	const result = runScript(editor2.value.trim());
 
 	output.innerHTML = messages.join("<br />");
 
