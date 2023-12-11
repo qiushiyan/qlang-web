@@ -1,5 +1,4 @@
 import "./styles.css";
-import { addTerminalEntry } from "./terminal";
 import { init } from "./wasm";
 import "./tabs";
 import "./editor";
@@ -11,14 +10,13 @@ declare global {
 }
 
 Split(["#left", "#right"]);
-Split(["#editor-editor", "#editor-control"], {
+Split(["#editor-view", "#editor-control"], {
 	direction: "vertical",
 	sizes: [60, 40],
 });
 
 const bootstrap = async () => {
 	await init();
-	addTerminalEntry(terminal);
 };
 
 bootstrap();

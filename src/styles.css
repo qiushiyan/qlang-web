@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&family=Quicksand&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-textarea {
-    font-family: monospace;
 
+textarea {
     resize: none;
     font-size: 18px;
 }
@@ -60,12 +60,29 @@ button.active {
 #editor-editor {
     color: #abb2bf;
     background-color: #282C34;
+    height: 100%;
+    width: 100%;
+}
+
+.prism-code-editor {
+    height: 100%
+}
+
+#editor-view {
+    position: relative;
+    overflow: hidden;
+}
+
+:host {
+    height: 100%;
+    overflow: auto;
 }
 
 #editor-output {
     font-family: monospace;
     @apply font-mono py-3 px-6
 }
+
 
 .error {
     color: red

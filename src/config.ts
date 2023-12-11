@@ -1,6 +1,5 @@
 export const examples = {
-	"data-types": `
-# primitive types, Number, String, Boolean
+	"data-types": `# primitive types, Number, String, Boolean
 print(2 * 2)
 print("Hello" + " World")
 
@@ -18,8 +17,7 @@ print(vec * 2)
 vec2 = random(10, 1, 3)
 print(vec2[vec2 > 2.5])
     `,
-	expressions: `
-# assignment
+	expressions: `# assignment
 let x  = 1 # let is optional
 y <- 2
 
@@ -35,8 +33,7 @@ for (i in 1:3) {
     print(i)
 }
 `,
-	functions: `
-greet <- fn(name) {
+	functions: `greet <- fn (name) {
     if (name == "Q") {
         return "I know you!"
     }
@@ -51,8 +48,7 @@ print(greet("Q"))
 # use the pipe operator
 "john" |> greet |> print
     `,
-	functional: `
-# functions as first class citizens
+	functional: `# functions as first class citizens
 vec = [1, 2, 3]
 
 make_multiplier <- fn (val) {

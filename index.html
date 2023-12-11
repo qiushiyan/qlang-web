@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + TS</title>
+  <title>Q Playground</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
       <article id="description" class="prose prose-zinc  p-4 lg:p-8 max-w-none min-h-screen h-full">
         <h2>Playground for the Q Language</h2>
         <p>
-          My programming endeavors frequently involve a mixed usage of JavaScript, Python, and R, each offering distinct
+          My dev workflow frequently involve a mixed usage of JavaScript, Python, and R, each offering distinct
           advantages.
           Inspired by the book <a href="https://interpreterbook.com/">Writing An Interpreter In Go</a>, I was motivated
           to develop a language that encapsulates the strengths of these three. Thus, the inception of <span
@@ -52,7 +52,6 @@
       </article>
 
     </section>
-    </section>
 
     <section id="right" class="flex flex-col">
       <header class="flex flex-row bg-slate-200">
@@ -69,7 +68,11 @@
       </section>
 
       <section id="editor" class="flex flex-col basis-full">
-        <textarea id="editor-editor" class="p-2 lg:p-4" spellcheck="false"></textarea>
+        <section id="editor-view">
+          <textarea id="editor-editor" class="p-2 lg:p-4" spellcheck="false"></textarea>
+
+        </section>
+
         <section id="editor-control">
           <header class="flex items-center justify-between border-2 bg-slate-200 py-3 px-6">
             <p class="font-medium">Output</p>

@@ -10,6 +10,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "@types/golang-wasm-exec": "^1.15.2",
+    "@types/prismjs": "^1.26.3",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
@@ -17,6 +18,12 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
+    "prism-code-editor": "^2.2.4",
     "split.js": "^1.6.5"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "prism-code-editor@2.2.4": "patches/prism-code-editor@2.2.4.patch"
+    }
   }
 }

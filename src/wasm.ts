@@ -16,6 +16,10 @@ export const init = async () => {
 			go.importObject,
 		);
 
-		go.run(result.instance);
+		return await go.run(result.instance);
 	}
+
+	alert(
+		"Your browser does not support WebAssembly. To run the code, consider switch to the latest version of Chrome or Firefox.",
+	);
 };

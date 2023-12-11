@@ -6,7 +6,7 @@ export const shortcuts = (event: KeyboardEvent) => {
 
 	if (event.ctrlKey && event.key === "l") {
 		event.preventDefault();
-		clear(event);
+		clear();
 	}
 
 	if (event.shiftKey && event.key === "Enter") {
@@ -20,7 +20,7 @@ export const submit = (event: KeyboardEvent) => {
 	form.dispatchEvent(new Event("submit"));
 };
 
-export const clear = (event: KeyboardEvent) => {
+export const clear = () => {
 	const terminal = document.querySelector("#terminal") as HTMLDivElement;
 	const entries = terminal.querySelectorAll(".entry");
 	if (entries.length > 1) {

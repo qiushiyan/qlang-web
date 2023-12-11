@@ -1,9 +1,15 @@
 import type { Config } from "tailwindcss";
+import typographyPlugin from "@tailwindcss/typography";
 
 export default ({
 	content: ["./index.html"],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				sans: ["Quicksand", "sans"],
+				mono: ["JetBrains Mono", "monospace"],
+			},
+		},
 	},
-	plugins: [require("@tailwindcss/typography")],
+	plugins: [typographyPlugin],
 } satisfies Config);

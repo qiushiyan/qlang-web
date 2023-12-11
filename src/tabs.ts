@@ -1,3 +1,5 @@
+import { addTerminalEntry } from "./terminal";
+
 const terminal = document.getElementById("terminal") as HTMLDivElement;
 let activeTab: Tab = "editor";
 const terminalButton = document.getElementById(
@@ -11,6 +13,8 @@ const editorButton = document.getElementById(
 const editorTab = document.getElementById("editor") as HTMLDivElement;
 const editorInput = editorTab.querySelector("textarea") as HTMLTextAreaElement;
 
+let firstSwitch = true;
+
 terminalButton.addEventListener("click", () => {
 	if (activeTab === "terminal") return;
 
@@ -19,6 +23,12 @@ terminalButton.addEventListener("click", () => {
 	terminalTab.style.display = "block";
 	editorButton.classList.remove("active");
 	terminalButton.classList.add("active");
+	terminal.focus();
+
+	if (firstSwitch) {
+		firstSwitch = false;
+		addTerminalEntry(terminal);
+	}
 });
 
 editorButton.addEventListener("click", () => {
