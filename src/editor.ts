@@ -53,24 +53,23 @@ exampleSelect.addEventListener("change", (e) => {
 });
 
 runButton.addEventListener("click", () => {
+	runButton.disabled = true;
 	const oldLog = console.log;
 	const messages: string[] = [];
 	console.log = (message: string) => {
-		messages.push(message);
+		messages.push(message.replace("&{}", ""));
 	};
 	const result = runScript(editor2.value.trim());
-
 	output.innerHTML = messages.join("<br />");
 
 	if (result.error) {
 		output.textContent = result.error;
 		output.className = "error";
-	}
-
-	if (result.result) {
+	} else if (result.result) {
 		output.textContent = result.result;
 		output.className = "";
 	}
 
 	console.log = oldLog;
+	runButton.disabled = false;
 });

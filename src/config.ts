@@ -18,7 +18,7 @@ vec2 = random(10, 1, 3)
 print(vec2[vec2 > 2.5])
     `,
 	expressions: `# assignment
-let x  = 1 # let is optional
+let x = 1 # let is optional
 y <- 2
 
 # conditionals
