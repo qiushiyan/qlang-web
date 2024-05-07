@@ -1,4 +1,4 @@
-export const init = async () => {
+export const initWASM = async () => {
 	if (WebAssembly) {
 		if (!WebAssembly.instantiateStreaming) {
 			// polyfill
